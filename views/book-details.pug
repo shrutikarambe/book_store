@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    .container
+        .row
+            .col
+                p.h2= book.title
+                hr
+        .row(style='margin-bottom:20px;')
+            .col.text-center
+                i.fas.fa-book.text-center(style='font-size: 200px; padding: 10px;')
+        .row(style='margin-bottom:20px;')
+            dt.col-sm-3 Subtitle
+            dd.col-sm-9= book.subtitle
+            dt.col-sm-3 Description
+            dd.col-sm-9= book.description
+            dt.col-sm-3 Author
+            dd.col-sm-9= book.author
+            dt.col-sm-3 Published
+            dd.col-sm-9= new Date(book.published).toDateString()
+            dt.col-sm-3 Publisher
+            dd.col-sm-9= book.publisher
+            dt.col-sm-3 Pages
+            dd.col-sm-9= book.pages
+            dt.col-sm-3 Price Per Unit
+            dd.col-sm-9 &#8377; #{book.pricePerUnit}
+            dt.col-sm-3 Website
+            dd.col-sm-9 
+                a.text-bold(href=`${book.website}`)= book.website
+        .row
+            .col
+                form#cartForm.form-inline(action='/books/' + book.id, method='POST')
+                    .form-row.align-items-center
+                        .col-auto.my-1.justify-content-end
+                            select#bookQuantity.custom-select.mr-sm-2(name='bookQuantity')
+                                option(value='1', selected='') 1
+                                option(value='2') 2
+                                option(value='3') 3
+                        .col-auto.my-1
+                            button.btn.btn-primary(type='submit') Add to Cart

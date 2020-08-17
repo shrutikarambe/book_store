@@ -1,0 +1,18 @@
+[
+    {
+        "id": 200030,
+        "email": "shruti.karambe@gmail.com",
+        "password": "Password123",
+        "firstname": "Shruti",
+        "lastname": "Karambe",
+        "address": {
+            "home": {
+                "flatNo": "123",
+                "building": "Kutir Niwas",
+                "line1": "Panchwati",
+                "line2": "Pune",
+                "pincode": "411008"
+            }
+        }
+    }
+]

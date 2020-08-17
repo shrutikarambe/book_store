@@ -1,0 +1,22 @@
+[
+    {
+        "id": 100,
+        "name": "Autobiography",
+        "description": ""
+    },
+    {
+        "id": 101,
+        "name": "Fiction",
+        "description": ""
+    },
+    {
+        "id": 102,
+        "name": "Spiritual",
+        "description": ""
+    },
+    {
+        "id": 103,
+        "name": "Travel",
+        "description": ""
+    }
+]

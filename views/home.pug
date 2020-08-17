@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .container
+        each books, name in booksInCategories
+            .row
+                .col
+                    p.h4= name
+                    hr
+            .row(style='margin-bottom:20px;')
+                each book in books
+                    .card(style='width: 18rem; margin:8px;')
+                        i.fas.fa-book.text-center(style='font-size: 100px; padding: 10px;')
+                        .card-body
+                            a.card-title.h5(href='/books/' + book.id)= book.title
+                            p.card-text= book.shortDesc
+                        .card-footer
+                            form#cartFormHome.form-inline(action='/carts/' + book.id)
+                                .form-row.align-items-center
+                                    .col-auto.my-1.justify-content-end
+                                        select#bookQuantity.custom-select.mr-sm-2(name='bookQuantity')
+                                            option(value='1', selected='') 1
+                                            option(value='2') 2
+                                            option(value='3') 3
+                                    .col-auto.my-1
+                                        button.btn.btn-primary(type='submit') Add to Cart
+
